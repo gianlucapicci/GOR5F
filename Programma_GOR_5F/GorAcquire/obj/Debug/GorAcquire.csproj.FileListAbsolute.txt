@@ -28,3 +28,32 @@ E:\Dani\Scuola\Scuola 2014-2015\GOR\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\
 E:\Dani\Scuola\Scuola 2014-2015\GOR\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.exe
 E:\Dani\Scuola\Scuola 2014-2015\GOR\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.pdb
 D:\Develop\Git\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.csprojResolveAssemblyReference.cache
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\GorAcquire.exe.config
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.exe
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\GorAcquire.exe
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\GorAcquire.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\GorDevices.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.InterIntegratedCircuit.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.GeneralPurpose.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.Components.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.System.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.Interop.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.SerialPeripheralInterface.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Common.Logging.Core.dll
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\GorDevices.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.InterIntegratedCircuit.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.InterIntegratedCircuit.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.GeneralPurpose.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.GeneralPurpose.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.Components.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.System.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.Interop.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.SerialPeripheralInterface.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Raspberry.IO.SerialPeripheralInterface.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Common.Logging.Core.pdb
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\bin\Debug\Common.Logging.Core.xml
+C:\Users\LUCA.NERI\Desktop\GOR5F\GOR5F\Programma_GOR_5F\GorAcquire\obj\Debug\GorAcquire.csprojResolveAssemblyReference.cache

@@ -41,7 +41,7 @@ namespace Gor.Acquisition.Daemon
             
             try
             {
-                Initialize();
+                Initialize(true);
                 while (!exitProgram())
                 {
                     Acquire();
@@ -66,21 +66,30 @@ namespace Gor.Acquisition.Daemon
             return false;
         }
 
-        private static void Initialize()
+        private static void Initialize(bool inSimulation)
         {
-            //RelativeHumidity_HIH4000 relativeHumidity = new RelativeHumidity_HIH4000(RELATIVE_HUMIDITY_CHANNEL, converter);
-            //PhotoResistor light = new PhotoResistor(PHOTO_RESISTOR_CHANNEL, converter);
-            //TerrainHumidity_YL69YL38 terrainHumidity = new TerrainHumidity_YL69YL38(TERRAIN_HUMIDITY_CHANNEL, converter);
-            ////temperature = new Temperature_DS1822(false);
-            //Temperature_DS1822 temperature = new Temperature_DS1822(false, "28-0000062196f0");
+            if (inSimulation)
+            {
+                RelativeHumidity_HIH4000 relativeHumidity = new RelativeHumidity_HIH4000(true);
+                PhotoResistor light = new PhotoResistor(true);
+                Temperature_DS1822 temperature = new Temperature_DS1822(true);
+            }
+            else
+            {
+                //RelativeHumidity_HIH4000 relativeHumidity = new RelativeHumidity_HIH4000(RELATIVE_HUMIDITY_CHANNEL, converter);
+                //PhotoResistor light = new PhotoResistor(PHOTO_RESISTOR_CHANNEL, converter);
+                //TerrainHumidity_YL69YL38 terrainHumidity = new TerrainHumidity_YL69YL38(TERRAIN_HUMIDITY_CHANNEL, converter);
+                ////temperature = new Temperature_DS1822(false);
+                //Temperature_DS1822 temperature = new Temperature_DS1822(false, "28-0000062196f0");
 
-            ////Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS, i2cDriver);
-            //Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS);
-            zeroInFile(); 
+                ////Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS, i2cDriver);
+                //Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS);
+                zeroInFile();
 
-            converter = new Adc_MCP3208();
+                converter = new Adc_MCP3208();
 
-            PhotoResistor foto = new PhotoResistor(PHOTO_RESISTOR_CHANNEL, converter); 
+                PhotoResistor foto = new PhotoResistor(PHOTO_RESISTOR_CHANNEL, converter);
+            }
             return;
         }
 

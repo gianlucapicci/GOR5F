@@ -12,9 +12,14 @@ namespace Gor.Devices
         public int Channel { get; set; }
         public Adc_MCP3208 Connection { get; set; }
 
+        private bool firstValue = true;
+
+        private Measurement LastMeasurement { get; set; }
+
         public RelativeHumidity_HIH4000() : this(true)
         {
-
+            MaxValue = 0.826;
+            MinValue = 3.198;
         }
 
         public RelativeHumidity_HIH4000(bool sim) : base(sim)
@@ -43,7 +48,16 @@ namespace Gor.Devices
         { return -1; }
         public override Measurement Measure()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            double value;
+            if(Simulation)
+            {
+                if (firstValue)
+                    value = rnd.Next(0, 4)+rnd.NextDouble();
+                
+                rnd.Next(0, 101);
+            }
+            return new Measurement();
         }
 
         public override void Initialization()
