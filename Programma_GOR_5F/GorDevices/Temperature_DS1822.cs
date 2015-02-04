@@ -13,8 +13,19 @@ namespace Gor.Devices
 
         private bool firstValue = true;
 
-        public Temperature_DS1822(bool sim) : base(sim)
+        public Temperature_DS1822(bool Simulation)
+            : base(Simulation) //, string SensorID) : base(sim)
         {
+            // MONTI: il costruttore deve avere il codice univoco del termometro come parametro OBBLIGATORIO
+
+            MinValue = -20;
+            MaxValue = 45;
+
+            AlarmMin = MinValue;
+            AlarmMax = MaxValue;
+
+            LastMeasurement.Unit = "°C"; 
+
             p = new Process();
             Initialization();
         }
@@ -33,10 +44,8 @@ namespace Gor.Devices
 
         public override Measurement Measure()
         {
-            
             if (Simulation)
             {
-                Random rnd = new Random();
                 if(firstValue)
                 {
                     double value = Math.Round((rnd.Next(-10, 55)+rnd.NextDouble()), 4);
@@ -77,6 +86,7 @@ namespace Gor.Devices
             // un esempio del parametro: "-y 1 0x51 2 b"
             string readTemperature = "/bin/cat";
             string arguments = "/sys/bus/w1/devices/22-0000003c0ff9/w1_slave";
+            // MONTI: il 
 
             //Console.WriteLine(i2cgetCmdArgs); 
             // Don't raise event when process exits

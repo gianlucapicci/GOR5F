@@ -12,9 +12,9 @@
 </node>
 </node>
 </node>
-<node CREATED="1422527907034" FOLDED="true" ID="ID_1077894334" MODIFIED="1422622375916" POSITION="right" TEXT="Glossario di git">
+<node CREATED="1422527907034" ID="ID_1077894334" MODIFIED="1422920809384" POSITION="right" TEXT="Glossario di git">
 <node CREATED="1422535395444" ID="ID_300386133" MODIFIED="1422535434985" TEXT="Queste definizioni sono per riferimento, possono contenere concetti che verranno definiti in seguito"/>
-<node CREATED="1422529133174" FOLDED="true" ID="ID_1403880510" MODIFIED="1422622375900" TEXT="Workspace o Working Area">
+<node CREATED="1422529133174" FOLDED="true" ID="ID_1403880510" MODIFIED="1422920826446" TEXT="Workspace o Working Area o Working Directory">
 <node CREATED="1422529342159" ID="ID_519427407" MODIFIED="1422536249526" STYLE="fork" TEXT="In Git Gui &quot;archivio&quot; ????"/>
 <node CREATED="1407278601575" FOLDED="true" ID="ID_1169769216" MODIFIED="1422622375900" TEXT="E&apos; il contenuto &quot;non nascosto&quot; della cartella locale. Contiene l&apos;attuale versione tutte le cartelle e tutti i file tenuti sotto controllo di revisione.">
 <node CREATED="1407278741832" ID="ID_1279074333" MODIFIED="1414048259495" TEXT="Contiene tutti i file da editare del progetto, nella versione corrente. "/>
@@ -23,8 +23,9 @@
 <node CREATED="1414048397180" ID="ID_14772367" MODIFIED="1422535864338" TEXT="Per rendere definitive le modifiche del working tree bisogna fare un &quot;commit&quot;. "/>
 <node CREATED="1422541976360" ID="ID_421047048" MODIFIED="1422541984264" TEXT="Anche &quot;working directory&quot;"/>
 </node>
-<node CREATED="1422559166322" FOLDED="true" ID="ID_1390663216" MODIFIED="1422622375900" TEXT="&quot;Working tree&quot;">
+<node CREATED="1422559166322" ID="ID_1390663216" MODIFIED="1422920878663" TEXT="&quot;Working tree&quot;">
 <node CREATED="1422559171290" ID="ID_1923860125" MODIFIED="1422559244280" TEXT="L&apos;insieme corrente dei file che vengono mantenuti in controllo di revisione, cio&#xe8; quelli che, quando modificati, possono finire in un commit (se prima messi in staging). "/>
+<node CREATED="1422921065520" ID="ID_1552893394" MODIFIED="1422921104993" TEXT="E&apos; insieme dei file che sono nello stato di &quot;tracked&quot;"/>
 </node>
 <node CREATED="1422529315928" FOLDED="true" ID="ID_56998175" MODIFIED="1422622375900" TEXT="Stage">
 <node CREATED="1422529342159" ID="ID_1494571680" MODIFIED="1422529362999" TEXT="In Git Gui &quot;preparazione&quot;"/>
@@ -42,7 +43,7 @@
 </node>
 <node CREATED="1422540835526" ID="ID_1342054114" MODIFIED="1422540847087" TEXT="E&apos; lo stato del prossimo commit. "/>
 </node>
-<node CREATED="1407278770613" FOLDED="true" ID="ID_1411252280" MODIFIED="1422622375916" TEXT="Repository">
+<node CREATED="1407278770613" ID="ID_1411252280" MODIFIED="1422920866860" TEXT="Repository (.git directory)">
 <node CREATED="1422529342159" ID="ID_1775680789" MODIFIED="1422548281085" TEXT="In Git Gui &quot;????&quot;"/>
 <node CREATED="1416406234908" ID="ID_375313557" MODIFIED="1422535354747" TEXT="La versione attuale di tutti i file e di TUTTE le modifiche &quot;committate&quot; in passato"/>
 <node CREATED="1407278652800" ID="ID_788127584" MODIFIED="1422535513130" TEXT="E&apos; ci&#xf2; che viene (?parzialmente?) replicato su tutti i computer che accedono al sistema di controllo delle revisioni"/>
@@ -67,6 +68,48 @@
 <node CREATED="1422529160684" FOLDED="true" ID="ID_132009652" MODIFIED="1422622375916" TEXT="Head">
 <node CREATED="1422529342159" ID="ID_753095378" MODIFIED="1422548281085" TEXT="In Git Gui &quot;????&quot;"/>
 <node CREATED="1407279100498" ID="ID_74532650" MODIFIED="1407279139100" TEXT="Un HEAD tiene traccia dell&apos;ultimo commit di una branch"/>
+</node>
+</node>
+<node CREATED="1422921239988" ID="ID_153698760" MODIFIED="1422922393699" POSITION="right" TEXT="Stato di modifica dei file in un directory Git">
+<node CREATED="1422921276915" ID="ID_258131940" MODIFIED="1422921301323" TEXT="modified (modificato)">
+<node CREATED="1422921521460" ID="ID_1095208702" MODIFIED="1422922028094" TEXT="il file &#xe8; stato cambiato, ma non finir&#xe0; nella prossima memorizzazione (commit, revisione)"/>
+</node>
+<node CREATED="1422921301795" ID="ID_1070813497" MODIFIED="1422921311081" TEXT="staged (&quot;preparato&quot;)">
+<node CREATED="1422921985170" ID="ID_461710674" MODIFIED="1422922037606" TEXT="il file &#xe8; stato scelto per finire nella prossima memorizzazione (commit, revisione)"/>
+</node>
+<node CREATED="1422921311863" ID="ID_160302264" MODIFIED="1422922271936" TEXT="committed (&quot;nuova revisione&quot;)">
+<node CREATED="1422922396812" ID="ID_1379183816" MODIFIED="1422922460052" TEXT="appena fatto un commit, tutti i file che sono stati inclusi nel commit diventano &quot;non modificati&quot; e non si vedono pi&#xf9; fra quelli modificati"/>
+</node>
+</node>
+<node CREATED="1422921239988" ID="ID_292051975" MODIFIED="1422922486804" POSITION="right" TEXT="Stato di memorizzazione dei file in un directory Git">
+<node CREATED="1422922525104" ID="ID_941460670" MODIFIED="1422922529604" TEXT="untracked">
+<node CREATED="1422922966037" ID="ID_348720349" MODIFIED="1422922973991" TEXT="un file di cui non si tiene traccia"/>
+<node CREATED="1422922845420" ID="ID_681557769" MODIFIED="1422922896925" TEXT="un file che non era nell&apos;ultimo commit e non &#xe8; stato messo nell&apos;area di staging"/>
+<node CREATED="1422922897412" ID="ID_252403814" MODIFIED="1422922900287" TEXT="es.">
+<node CREATED="1422922900830" ID="ID_367838914" MODIFIED="1422922908534" TEXT="un file appena creato"/>
+<node CREATED="1422922909057" ID="ID_1216213847" MODIFIED="1422922964382" TEXT="un file che &#xe8; stato cancellato e tolto dall&apos;elenco dei file di cui si tiene traccia"/>
+</node>
+</node>
+<node CREATED="1422922521943" ID="ID_633575389" MODIFIED="1422922524631" TEXT="tracked">
+<node CREATED="1422922597409" ID="ID_1187629679" MODIFIED="1422922612035" TEXT="file che erano nell&apos;ultimo commit"/>
+<node CREATED="1422922613725" ID="ID_324734755" MODIFIED="1422923012426" TEXT="possono essere (o divenire)">
+<node CREATED="1422922725168" ID="ID_1363338024" MODIFIED="1422922732435" TEXT="&quot;modified&quot;">
+<node CREATED="1422922733278" ID="ID_462254919" MODIFIED="1422922751139" TEXT="se faccio delle modifiche rispetto all&apos;ultimo commit"/>
+</node>
+<node CREATED="1422922762935" ID="ID_1235258310" MODIFIED="1422922766138" TEXT="&quot;staged&quot;">
+<node CREATED="1422922769744" ID="ID_1511542637" MODIFIED="1422922785152" TEXT="se preparo quel file per il successivo commit"/>
+<node CREATED="1422923447598" ID="ID_91867594" MODIFIED="1422923535809" TEXT="se dopo aver &quot;aggiunto&quot; un file all&apos;area si stage lo modifico ancora, quello che &quot;va su&quot; con il commit &#xe8; la versione &quot;aggiunta&quot; NON la corrente, che contiene gli ultimi cambiamenti. "/>
+</node>
+<node CREATED="1422922627834" ID="ID_45292156" MODIFIED="1422922642885" TEXT="&quot;un-modified&quot;">
+<node CREATED="1422922643803" ID="ID_1992068840" MODIFIED="1422923053346" TEXT="se faccio in modo che le modifiche fatte vengano eliminate e che si torni allo stato che il file aveva al momento dell&apos;ultimo commit">
+<node CREATED="1422923314003" ID="ID_1276272789" MODIFIED="1422923329816" TEXT="comando git checkout"/>
+</node>
+</node>
+</node>
+</node>
+<node CREATED="1422923098413" ID="ID_1475485164" MODIFIED="1422923120634" TEXT="questo stato pu&#xf2; essere visto con il comando git status"/>
+<node CREATED="1422923211842" ID="ID_320480741" MODIFIED="1422923246626" TEXT="per mettere un file in commit bisogna esplicitamente cambiarne lo stato, mettendolo prima in &quot;staging&quot;">
+<node CREATED="1422923248217" ID="ID_584222762" MODIFIED="1422923256551" TEXT="comando git add"/>
 </node>
 </node>
 <node CREATED="1422533983218" FOLDED="true" ID="ID_1565648433" MODIFIED="1422622375932" POSITION="right" TEXT="GitHub">
@@ -215,7 +258,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1422526553544" FOLDED="true" ID="ID_517078947" MODIFIED="1422622375963" POSITION="right" TEXT="Particolarit&#xe0; per l&apos;uso a scuola">
+<node CREATED="1422526553544" FOLDED="true" ID="ID_517078947" MODIFIED="1422923720028" POSITION="right" TEXT="Particolarit&#xe0; per l&apos;uso a scuola">
 <node CREATED="1421924391429" ID="ID_219276353" MODIFIED="1421924933730" TEXT="Il clone copia da Internet TUTTO il contenuto della cartella del repository"/>
 <node CREATED="1421668978664" ID="ID_968326948" MODIFIED="1421924957485" TEXT="Se nel repository c&apos;&#xe8; molta roba, a scuola  &#xe8; meglio non scaricarla da Internet con un comando di clone (buttiamo gi&#xf9; l&apos;Internet della scuola). "/>
 <node CREATED="1421924146698" ID="ID_1058836499" MODIFIED="1422526612046" TEXT="A scuola dobbiamo copiare dalla chiavetta e sincronizzare in seguito solo le differenze, con git. "/>
@@ -241,7 +284,7 @@
 <node CREATED="1422526071049" ID="ID_316758828" MODIFIED="1422526119506" TEXT="Portare la chiavetta a scuola e decomprimerla nella cartella locale o nella propria cartella documenti"/>
 <node CREATED="1422526238329" ID="ID_346462770" MODIFIED="1422526258440" TEXT="Il risultato della decompressione &#xe8; utilizzabile a scuola"/>
 </node>
-<node CREATED="1421926726908" FOLDED="true" ID="ID_1700669666" MODIFIED="1422622375994" POSITION="right" TEXT="Uso di Git Bash">
+<node CREATED="1421926726908" ID="ID_1700669666" MODIFIED="1422921415509" POSITION="right" TEXT="Uso di Git Bash">
 <node CREATED="1421926734074" FOLDED="true" ID="ID_365207755" MODIFIED="1422622375963" TEXT="Incolla il contenuto della clipboard">
 <node CREATED="1421926753954" ID="ID_1090829920" MODIFIED="1421926785216" TEXT="click destro sulla barra superiore del programma "/>
 <node CREATED="1421926785536" ID="ID_236794692" MODIFIED="1421926799107" TEXT="Modifica"/>
@@ -263,14 +306,17 @@
 <node CREATED="1417125041840" ID="ID_1786334970" MODIFIED="1417125047827" TEXT="per avere aiuto"/>
 <node CREATED="1417125048443" ID="ID_150871705" MODIFIED="1417125143827" TEXT="(in Windows fa partire un help HTML da file)"/>
 </node>
-<node CREATED="1422621268358" FOLDED="true" ID="ID_1735731193" MODIFIED="1422622375963" TEXT="Identificarsi come utente">
-<node CREATED="1422621276055" FOLDED="true" ID="ID_1105809874" MODIFIED="1422622375963" TEXT="per configurare l&apos;utente">
+<node CREATED="1422621268358" ID="ID_1735731193" MODIFIED="1422921416922" TEXT="Identificarsi come utente">
+<node CREATED="1422621276055" ID="ID_1105809874" MODIFIED="1422921419468" TEXT="per configurare l&apos;utente">
 <node CREATED="1422621301463" ID="ID_879990608" MODIFIED="1422621435755" TEXT="git config --global user.name &quot;&lt;username che si vuole vedere nei log&gt;&quot;"/>
 <node CREATED="1422622241355" ID="ID_375833293" MODIFIED="1422622260309" TEXT="senza parametro per vedere come &#xe8; configurto attualmente"/>
 </node>
-<node CREATED="1422621325112" FOLDED="true" ID="ID_389906844" MODIFIED="1422622375963" TEXT="per configurare la email">
+<node CREATED="1422621325112" ID="ID_389906844" MODIFIED="1422921421966" TEXT="per configurare la email">
 <node CREATED="1422621337849" ID="ID_554053470" MODIFIED="1422621396933" TEXT=" git config --global user.email &lt;username email address&gt;@&lt;dominio provider email&gt;"/>
 <node CREATED="1422622241355" ID="ID_910702786" MODIFIED="1422622260309" TEXT="senza parametro per vedere come &#xe8; configurto attualmente"/>
+</node>
+<node CREATED="1422921422786" FOLDED="true" ID="ID_1574323637" MODIFIED="1422921499164" TEXT="N.B. se il repository &#xe8; stato ottenuto come .zip della cartella Git di qualcun altro, il nome configurato sar&#xe0; quello dell&apos;altro!">
+<node CREATED="1422921480014" ID="ID_1672217571" MODIFIED="1422921485217" TEXT="Cambiarlo!"/>
 </node>
 </node>
 <node CREATED="1416407250663" FOLDED="true" ID="ID_1074380447" MODIFIED="1422622375963" TEXT="$ git status">
@@ -422,18 +468,32 @@
 <node CREATED="1422542160813" ID="ID_1538085758" MODIFIED="1422559769808" TEXT="Dopo che un file &#xe8; stato &quot;removed&quot; non verr&#xe0; pi&#xf9; tenuto sotto controllo di revisione. Se non verr&#xe0; messo fra i file da ignorare ogni sua modifica sar&#xe0; vista, ma non sar&#xe0; pi&#xf9; messa in un commit, a meno che non si faccia un nuovo &quot;add&quot; del file. Il suo stato sar&#xe0; sempre &quot;untracked&quot; come se fosse un file nuovo. "/>
 </node>
 </node>
-<node CREATED="1422552215346" FOLDED="true" ID="ID_941439601" MODIFIED="1422622375978" TEXT="Commit">
+<node CREATED="1422552215346" ID="ID_941439601" MODIFIED="1422924244406" TEXT="Commit">
 <font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1416405346277" FOLDED="true" ID="ID_1824382994" MODIFIED="1422622375978" TEXT="$ git commit -m &quot;&lt;descrizione&gt;&quot;">
+<node CREATED="1422924264089" ID="ID_1051706669" MODIFIED="1422924271871" TEXT="Comando da preferire">
+<node CREATED="1416405346277" ID="ID_1824382994" MODIFIED="1422924298469" TEXT="$ git commit -m &quot;&lt;descrizione&gt;&quot;">
 <node CREATED="1417126579595" ID="ID_41123655" MODIFIED="1417126602123" TEXT="memorizza permanentemente tutti i file che sono stati &quot;aggiunti&quot;"/>
 <node CREATED="1422552231577" ID="ID_1027832896" MODIFIED="1422573831593" TEXT="meglio mettere sempre l&apos;opzione .m con una descrizione"/>
 <node CREATED="1422552249233" ID="ID_183010412" MODIFIED="1422553129140" TEXT="leggere bene cosa si scrive, perch&#xe8; PARE che si possa cambiare la descrizione, ma IO NON SO FARE!"/>
+<node CREATED="1422924300699" ID="ID_487790856" MODIFIED="1422924304622" TEXT="-m = message"/>
 </node>
-<node CREATED="1422552341933" FOLDED="true" ID="ID_1036808357" MODIFIED="1422622375978" TEXT="La memorizzazione avviene LOCALMENTE, nel repository locale">
+</node>
+<node CREATED="1422552341933" ID="ID_1036808357" MODIFIED="1422924250183" TEXT="La memorizzazione avviene LOCALMENTE, nel repository locale">
 <node CREATED="1422552373328" ID="ID_575171782" MODIFIED="1422553146541" TEXT="le differenze rispetto alla versione precedente vengono memorizzate all&apos;interno della cartella .git"/>
+<node CREATED="1422924317937" ID="ID_687229419" MODIFIED="1422924328000" TEXT="il commit viene identificato">
+<node CREATED="1422924328923" ID="ID_423304672" MODIFIED="1422924338299" TEXT="con il suo hash SHA1">
+<node CREATED="1422924352852" ID="ID_825823049" MODIFIED="1422924364821" TEXT="git lo distingue univocamente cos&#xec;"/>
+<node CREATED="1422924418918" ID="ID_518753371" MODIFIED="1422924477827" TEXT="&#xe8; un numero di molti bit che &#xe8; il &quot;riassunto&quot; di ci&#xf2; che viene spedito nel repository"/>
+<node CREATED="1422924445469" ID="ID_739228699" MODIFIED="1422924459595" TEXT="&#xe8; visualizzato in esadecimale"/>
 </node>
-<node CREATED="1422551019597" FOLDED="true" ID="ID_54535377" MODIFIED="1422622375978" TEXT="$ git commit">
-<node CREATED="1422552582618" FOLDED="true" ID="ID_154812829" MODIFIED="1422622375978" TEXT="se non si mette niente, parte vim!">
+<node CREATED="1422924339538" ID="ID_1390904731" MODIFIED="1422924351258" TEXT="con la sua stringa di descrizione">
+<node CREATED="1422924366995" ID="ID_763058169" MODIFIED="1422924379982" TEXT="gli umani lo distinguono cos&#xec;. "/>
+<node CREATED="1422924380401" ID="ID_1452812507" MODIFIED="1422924405997" TEXT="E&apos; opportuno mettere messaggi chiari ed esplicativi."/>
+</node>
+</node>
+</node>
+<node CREATED="1422551019597" ID="ID_54535377" MODIFIED="1422924253565" TEXT="$ git commit">
+<node CREATED="1422552582618" ID="ID_154812829" MODIFIED="1422924290256" TEXT="se non si mette niente, per scrivere la descrizione, parte vim!">
 <node CREATED="1422552805228" ID="ID_25005005" MODIFIED="1422552814982" TEXT="e dopo &#xe8; un problema uscire"/>
 <node CREATED="1422552816061" ID="ID_632927873" MODIFIED="1422552838830" TEXT="1 - scrivere il messaggio di descrizione del commit"/>
 <node CREATED="1422552839530" FOLDED="true" ID="ID_1550137881" MODIFIED="1422622375978" TEXT="2 - salvare">
@@ -510,11 +570,11 @@
 <node CREATED="1422546531406" FOLDED="true" ID="ID_702548778" MODIFIED="1422622375994" TEXT="$ git checkout &lt;nome del branch&gt;">
 <node CREATED="1422546694157" ID="ID_883242448" MODIFIED="1422546699896" TEXT="ripristina tutti i file del repository alla condizione che avevano al momento del commit del branch indicato"/>
 </node>
-<node CREATED="1422548555639" FOLDED="true" ID="ID_906017042" MODIFIED="1422622375994" TEXT="Differenze">
-<node CREATED="1416407952543" FOLDED="true" ID="ID_1341112570" MODIFIED="1422622375994" TEXT="$ git diff &lt;commit&gt;">
-<node CREATED="1417127107893" ID="ID_1449340457" MODIFIED="1417127138130" TEXT="fa vedere le differenze fra il commit indicato e la situazione corrente del repository"/>
+<node CREATED="1422548555639" ID="ID_906017042" MODIFIED="1422923720028" TEXT="Differenze">
+<node CREATED="1416407952543" ID="ID_1341112570" MODIFIED="1422923724332" TEXT="$ git diff &lt;commit&gt;">
+<node CREATED="1417127107893" ID="ID_1449340457" MODIFIED="1422923748403" TEXT="fa vedere le differenze fra il commit indicato e la situazione corrente del directory (workspace)"/>
 </node>
-<node CREATED="1416407952543" FOLDED="true" ID="ID_290271875" MODIFIED="1422622375994" TEXT="$ git diff &lt;commit&gt; &lt;commit&gt;">
+<node CREATED="1416407952543" ID="ID_290271875" MODIFIED="1422923725463" TEXT="$ git diff &lt;commit&gt; &lt;commit&gt;">
 <node CREATED="1417127107893" ID="ID_1936245316" MODIFIED="1417127158523" TEXT="fa vedere le differenze fra i due commit indicati"/>
 </node>
 <node CREATED="1422548571915" ID="ID_1854044863" MODIFIED="1422549803200" TEXT="si vedono meglio con un client grafico"/>

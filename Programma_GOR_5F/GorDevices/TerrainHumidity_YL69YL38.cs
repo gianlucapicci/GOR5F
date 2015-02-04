@@ -9,91 +9,55 @@ namespace Gor.Devices
     public class TerrainHumidity_YL69YL38 : Sensor, IMCP3208Convertible
     {
 
-        public int Channel { get; set; }
+        public int channel { get; set; }
 
-        public Adc_MCP3208 Connection { get; set; }
-
-        Random rnd;
+        public Adc_MCP3208 adc { get; set; }
 
         private bool firstValue = true;
 
-        private double LastValue { get; set; }
-
-        public TerrainHumidity_YL69YL38() : this(true)
+        public TerrainHumidity_YL69YL38(bool Simulation, Adc_MCP3208 adc, int Channel)
+            : base(Simulation)
         {
+            this.adc = adc;
 
-        }
+            MinValue = 0;
+            MaxValue = 100;
 
-        public TerrainHumidity_YL69YL38(bool sim) : base(sim)
-        {
-            MinValue = 0.826;
-            
-            MaxValue = 3.198;
-            
-            
-        }
+            AlarmMin = MinValue;
+            AlarmMax = MaxValue;
 
-        public TerrainHumidity_YL69YL38(int channel) : base(false)
-        {
-            Channel = channel;
+            LastMeasurement.Unit = "R.H."; 
+
+            channel = Channel;
+
+            if (Simulation)
+                PrimoValore();
         }
 
         public override string Read()
         {
-            if (Connection == null)
-                throw new Exception("Nessuna connessione.");
-
-            double val = Connection.Read(Channel) * voltage / 4096;
-
-            return val.ToString();
+            return "";
         }
         
         public override int ReadInt()
-        { return -1; }
+        {
+            if (adc == null)
+                throw new Exception("Nessuna connessione.");
+
+            return adc.Read(channel);
+        }
         
         public override Measurement Measure()
         {
-            
             if (Simulation)
             {
-                rnd = new Random();
-                if (firstValue)
-                {
-                    do
-                    {
-                        LastValue = (rnd.Next(0, 4) + rnd.NextDouble());
-
-                    } while (LastValue > MaxValue || LastValue < MinValue);
-                    firstValue = false;
-
-                }
-                else
-                {
-                    bool ok = false;
-                    do
-                    {
-                        double varianza = (rnd.Next(0, 2) + rnd.NextDouble()) / 100;
-                        if (rnd.Next(0, 2) == 0 && (LastValue - varianza) > MinValue)
-                        {
-                            LastValue -= varianza;
-                            ok = true;
-                        }
-                        else if ((LastValue + varianza) < MaxValue)
-                        {
-                            LastValue += varianza;
-                            ok = true;
-                        }
-                    } while (!ok);
-                }
-
-                return new Measurement()
-                {
-                    Value = Math.Round((LastValue - MinValue) / 0.0315, 4),
-                    Unit = "%"
-                };
+                return simulaSensore();
             }
             else
             {
+                // mettere qui l'acquisizione vera 
+                // da verificare 
+                return null;
                 string read = Read();
 
                 return new Measurement
@@ -108,7 +72,9 @@ namespace Gor.Devices
 
         public override void Initialization()
         {
-            calibration = new Calibration_2Points(CalibrationFileName);
+            // NO!! non deve fare la taratura tutte le volte. Solo una volta e sotto controllo di un altro programma,
+            // che chiama i metodi di taratura del sensore
+            //calibration = new Calibration_2Points(CalibrationFileName); 
         }
     }
 }
