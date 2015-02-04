@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Raspberry.IO.GeneralPurpose;
+using Raspberry.IO.GeneralPurpose;
 using System.Threading;
 using Gor.Devices;
-//using Raspberry.IO.InterIntegratedCircuit;
+using Raspberry.IO.InterIntegratedCircuit;
 
 namespace Gor.Acquisition.Daemon
 {
@@ -27,11 +27,10 @@ namespace Gor.Acquisition.Daemon
 
         static Adc_MCP3208 converter;
 
-        //RelativeHumidity_HIH4000 relativeHumidity = new RelativeHumidity_HIH4000(RELATIVE_HUMIDITY_CHANNEL, converter);
-        //PhotoResistor light = new PhotoResistor(PHOTO_RESISTOR_CHANNEL, converter);
-        //TerrainHumidity_YL69YL38 terrainHumidity = new TerrainHumidity_YL69YL38(TERRAIN_HUMIDITY_CHANNEL, converter);
-        ////static Temperature_DS1822 temperature;
-        //Temperature_DS1822 temperature = new Temperature_DS1822(false, "28-0000062196f0");
+        static RelativeHumidity_HIH4000 relativeHumidity;
+        static PhotoResistor light;
+        static TerrainHumidity_YL69YL38 terrainHumidity;
+        static Temperature_DS1822 temperature;
 
         ////Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS, i2cDriver);
         //Rtc_PCF8563 rtc = new Rtc_PCF8563(RTC_ADDRESS);
@@ -70,9 +69,11 @@ namespace Gor.Acquisition.Daemon
         {
             if (inSimulation)
             {
-                RelativeHumidity_HIH4000 relativeHumidity = new RelativeHumidity_HIH4000(true);
-                PhotoResistor light = new PhotoResistor(true);
-                Temperature_DS1822 temperature = new Temperature_DS1822(true);
+                relativeHumidity = new RelativeHumidity_HIH4000(true);
+                light = new PhotoResistor(true);
+                temperature = new Temperature_DS1822(true);
+                terrainHumidity = new TerrainHumidity_YL69YL38(true);
+                
             }
             else
             {
@@ -104,9 +105,11 @@ namespace Gor.Acquisition.Daemon
 
         private static void Acquire()
         {
-            Console.Write(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " ");
-            Console.Write(converter.Read(PHOTO_RESISTOR_CHANNEL));
-
+            Console.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " ");
+            Console.WriteLine("Temperatura: " + temperature.Measure());
+            Console.WriteLine("Umidità dell'aria: " + relativeHumidity.Measure());
+            Console.WriteLine("Luminosità: " + light.Measure());
+            Console.WriteLine("Umidità del terreno: " + terrainHumidity.Measure());
             // test di tutti i canali: 
             //Console.Write(temperature.Measure());
             //for (int i = 0; i < 8; i++)
@@ -121,7 +124,7 @@ namespace Gor.Acquisition.Daemon
 
         private static void Wait()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             return; 
         }
     }

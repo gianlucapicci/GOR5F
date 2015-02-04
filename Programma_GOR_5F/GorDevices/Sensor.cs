@@ -13,7 +13,7 @@ namespace Gor
         protected Calibration_2Points calibration;
 
         public string CalibrationFileName { get; set; }
-
+        
         public Measurement LastMeasurement { get; internal set; }
 
         public bool Simulation { get; private set; }

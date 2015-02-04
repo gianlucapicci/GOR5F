@@ -1,7 +1,7 @@
 #region References
 
 using System;
-using Raspberry.Timers;
+//using Raspberry.Timers;
 
 #endregion
 
@@ -89,7 +89,7 @@ namespace Raspberry.IO.SerialPeripheralInterface
         public void Synchronize()
         {
             clockPin.Write(true);
-            Timer.Sleep(1);
+            //Timer.Sleep(1);
             clockPin.Write(false);
         }
 

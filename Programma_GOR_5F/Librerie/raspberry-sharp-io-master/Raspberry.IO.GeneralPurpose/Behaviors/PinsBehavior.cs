@@ -30,7 +30,7 @@ namespace Raspberry.IO.GeneralPurpose.Behaviors
         {
             Configurations = configurations.ToArray();
 
-            timer = Timer.Create();
+            //timer = Timer.Create();
             timer.Interval = 250;
             timer.Action = OnTimer;
         }
@@ -115,7 +115,7 @@ namespace Raspberry.IO.GeneralPurpose.Behaviors
             ProcessStep(currentStep);
             if (!TryGetNextStep(ref currentStep))
             {
-                Timer.Sleep(Interval);
+                //Timer.Sleep(Interval);
                 Stop();
             }
         }

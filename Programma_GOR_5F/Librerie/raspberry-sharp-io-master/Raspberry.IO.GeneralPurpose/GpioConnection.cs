@@ -66,7 +66,7 @@ namespace Raspberry.IO.GeneralPurpose
 
             namedPins = pinList.Where(p => !string.IsNullOrEmpty(p.Name)).ToDictionary(p => p.Name);
             
-            timer = Timer.Create();
+            //timer = Timer.Create();
 
             timer.Interval = this.settings.PollInterval;
             timer.Action = CheckInputPins;
@@ -469,7 +469,7 @@ namespace Raspberry.IO.GeneralPurpose
 
         private void Sleep(decimal duration)
         {
-            Timer.Sleep(duration < 0 ? settings.BlinkDuration : duration);
+            //Timer.Sleep(duration < 0 ? settings.BlinkDuration : duration);
         }
 
         private void Allocate(PinConfiguration configuration)

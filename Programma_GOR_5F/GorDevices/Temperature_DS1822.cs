@@ -11,6 +11,8 @@ namespace Gor.Devices
     {
         private Process p;
 
+        private bool firstValue = true;
+
         public Temperature_DS1822(bool sim) : base(sim)
         {
             p = new Process();
@@ -31,27 +33,42 @@ namespace Gor.Devices
 
         public override Measurement Measure()
         {
-            string s = Read();
-            string[] d = s.Split(' ');
-            string data = d[d.Length - 1];
-            data = data.Substring(2);
-
-            Measurement m = new Measurement
+            
+            if (Simulation)
             {
-                Value = double.Parse(data) / 1000,
-                Unit = "[°C]",
-                DisplayFormat = "0.000",
-                Moment = DateTime.Now,
-                ReadValue = s,
-                Name = "Temperature"
-            };
+                Random rnd = new Random();
+                if(firstValue)
+                {
+                    double value = Math.Round((rnd.Next(-10, 55)+rnd.NextDouble()), 4);
+                    LastMeasurement = new Measurement() { Value = value, Unit = "°C" };
+                    firstValue = false;
+                }
+                else
+                {
+                    double varianza = Math.Round((rnd.Next(-2, 3)+rnd.NextDouble()),4);
+                    LastMeasurement.Value += varianza;
+                }
+                return LastMeasurement;
+            }
+            else
+            {
+                string s = Read();
+                string[] d = s.Split(' ');
+                string data = d[d.Length - 1];
+                data = data.Substring(2);
 
-            //////if (m.Value > AlarmMax)
-            //////    onAlarm(new AlarmEventArgs(this, AlarmType.Max));
-            //////else if (m.Value < AlarmMin)
-            //////    onAlarm(new AlarmEventArgs(this, AlarmType.Min));
+                Measurement m = new Measurement
+                {
+                    Value = double.Parse(data) / 1000,
+                    Unit = "[°C]",
+                    DisplayFormat = "0.000",
+                    Moment = DateTime.Now,
+                    ReadValue = s,
+                    Name = "Temperature"
+                };
 
-            return m;
+                return m;
+            }
         }
 
         public override void Initialization()
