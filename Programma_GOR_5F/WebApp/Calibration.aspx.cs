@@ -53,6 +53,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnAvvia_Click(object sender, EventArgs e)
     {
+        //TODO SPEGNERE IL PROGRAMMA (SE è ACCESO)
         k.StartCalibration();
     }
     protected void btnPunto_Click(object sender, EventArgs e)
